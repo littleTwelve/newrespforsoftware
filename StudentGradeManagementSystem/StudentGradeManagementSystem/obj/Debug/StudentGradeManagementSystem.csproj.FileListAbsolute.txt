@@ -1,0 +1,35 @@
+c:\users\administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\bin\Debug\StudentGradeManagementSystem.exe.config
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\Interop.Microsoft.Office.Core.dll
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\Interop.Microsoft.Office.Interop.Word.dll
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\StudentGradeManagementSystem.csproj.ResolveComReference.cache
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\MainWindow.baml
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\StudentControlPage.baml
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\MainWindow.g.cs
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\StudentControlPage.g.cs
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\TeacherControlPage.g.cs
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\App.g.cs
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\StudentGradeManagementSystem_Content.g.cs
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\StudentGradeManagementSystem_MarkupCompile.cache
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\TeacherControlPage.baml
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\StudentGradeManagementSystem.g.resources
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\StudentGradeManagementSystem.Properties.Resources.resources
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\StudentGradeManagementSystem.csproj.GenerateResource.Cache
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\Interop.MSAdodcLib.dll
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\Interop.ADOX.dll
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\bin\Debug\StudentGradeManagementSystem.exe
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\bin\Debug\StudentGradeManagementSystem.pdb
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\bin\Debug\Interop.Microsoft.Office.Core.dll
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\bin\Debug\Interop.Microsoft.Office.Interop.Word.dll
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\StudentGradeManagementSystem.exe
+C:\Users\Administrator\documents\visual studio 2012\Projects\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\StudentGradeManagementSystem.pdb
+C:\Users\Administrator\Desktop\StudentGradeManagementSystem\StudentGradeManagementSystem\bin\Debug\StudentGradeManagementSystem.exe.config
+C:\Users\Administrator\Desktop\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\Interop.ADOX.dll
+C:\Users\Administrator\Desktop\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\Interop.Microsoft.Office.Core.dll
+C:\Users\Administrator\Desktop\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\Interop.Microsoft.Office.Interop.Word.dll
+C:\Users\Administrator\Desktop\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\Interop.MSAdodcLib.dll
+C:\Users\Administrator\Desktop\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\StudentGradeManagementSystem.csproj.ResolveComReference.cache
+C:\Users\Administrator\Desktop\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\StudentGradeManagementSystem.exe
+C:\Users\Administrator\Desktop\StudentGradeManagementSystem\StudentGradeManagementSystem\obj\Debug\StudentGradeManagementSystem.pdb

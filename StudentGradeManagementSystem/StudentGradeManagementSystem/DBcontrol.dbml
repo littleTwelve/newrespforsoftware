@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="StudentGradeMSDB3" EntityNamespace="StudentGradeManagementSystem" ContextNamespace="StudentGradeManagementSystem" Class="DBcontrolDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\v11.0;Initial Catalog=StudentGradeMSDB3;Integrated Security=True" SettingsObjectName="StudentGradeManagementSystem.Properties.Settings" SettingsPropertyName="StudentGradeMSDB3ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Grade集" Member="Grade集">
+    <Type Name="Grade集">
+      <Column Name="score" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Student_studentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Subject_subjectID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Student集_Grade集" Member="Student集" ThisKey="Student_studentID" OtherKey="studentID" Type="Student集" IsForeignKey="true" />
+      <Association Name="Subject集_Grade集" Member="Subject集" ThisKey="Subject_subjectID" OtherKey="subjectID" Type="Subject集" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student集" Member="Student集">
+    <Type Name="Student集">
+      <Column Name="studentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="studentName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Student集_Grade集" Member="Grade集" ThisKey="studentID" OtherKey="Student_studentID" Type="Grade集" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Subject集" Member="Subject集">
+    <Type Name="Subject集">
+      <Column Name="subjectID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="subjectName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="subjectType" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="credit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Subject集_Grade集" Member="Grade集" ThisKey="subjectID" OtherKey="Subject_subjectID" Type="Grade集" />
+    </Type>
+  </Table>
+</Database>

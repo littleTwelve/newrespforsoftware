@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="StudentGradeMS" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="StudentGradeMSContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Grade集" EntityType="StudentGradeMS.Grade" />
+    <EntitySet Name="Student集" EntityType="StudentGradeMS.Student" />
+    <EntitySet Name="Subject集" EntityType="StudentGradeMS.Subject" />
+    <AssociationSet Name="GradeStudent" Association="StudentGradeMS.GradeStudent">
+      <End Role="Grade" EntitySet="Grade集" />
+      <End Role="Student" EntitySet="Student集" />
+    </AssociationSet>
+    <AssociationSet Name="GradeSubject" Association="StudentGradeMS.GradeSubject">
+      <End Role="Grade" EntitySet="Grade集" />
+      <End Role="Subject" EntitySet="Subject集" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Grade">
+    <Key>
+      <PropertyRef Name="score" />
+    </Key>
+    <Property Type="Int32" Name="score" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Student" Relationship="StudentGradeMS.GradeStudent" FromRole="Grade" ToRole="Student" />
+    <Property Type="Int32" Name="Student_studentID" Nullable="false" />
+    <NavigationProperty Name="Subject" Relationship="StudentGradeMS.GradeSubject" FromRole="Grade" ToRole="Subject" />
+    <Property Type="Int32" Name="Subject_subjectID" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="studentID" />
+    </Key>
+    <Property Type="Int32" Name="studentID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Type="String" Name="studentName" Nullable="false" />
+    <Property Type="String" Name="password" Nullable="false" />
+    <NavigationProperty Name="Grade" Relationship="StudentGradeMS.GradeStudent" FromRole="Student" ToRole="Grade" />
+  </EntityType>
+  <EntityType Name="Subject">
+    <Key>
+      <PropertyRef Name="subjectID" />
+    </Key>
+    <Property Type="Int32" Name="subjectID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Type="String" Name="subjectName" Nullable="false" />
+    <Property Type="String" Name="subjectType" Nullable="false" />
+    <Property Type="Int32" Name="credit" Nullable="false" />
+    <NavigationProperty Name="Grade" Relationship="StudentGradeMS.GradeSubject" FromRole="Subject" ToRole="Grade" />
+  </EntityType>
+  <Association Name="GradeStudent">
+    <End Type="StudentGradeMS.Grade" Role="Grade" Multiplicity="*" />
+    <End Type="StudentGradeMS.Student" Role="Student" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Student" />
+      <Dependent Role="Grade" />
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GradeSubject">
+    <End Type="StudentGradeMS.Grade" Role="Grade" Multiplicity="*" />
+    <End Type="StudentGradeMS.Subject" Role="Subject" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="subjectID" />
+      </Principal>
+      <Dependent Role="Grade">
+        <PropertyRef Name="Subject_subjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

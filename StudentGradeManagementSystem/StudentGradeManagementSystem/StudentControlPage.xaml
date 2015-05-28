@@ -1,0 +1,45 @@
+﻿<Window x:Class="StudentGradeManagementSystem.StudentControlPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="StudentControlPage" Height="512" Width="804">
+    <Grid>
+        <!--<Image Source="1-121230094953.jpg" Stretch="Fill"/>-->
+
+        <Image Source="1-121230094953.jpg" Stretch="Fill"/>
+        <DataGrid x:Name="dataGrid2"  AutoGenerateColumns="False" CanUserAddRows="False" Margin="60,80,466,157" RenderTransformOrigin="0.5,1.122" IsReadOnly="True">
+            <DataGrid.Background>
+                <SolidColorBrush Color="#FFF0F0F0" Opacity="0.2"/>
+            </DataGrid.Background>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="SubjectID" Width="70" Binding="{Binding subjectID, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="SubjectName" Width="90" Binding="{Binding subjectName, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Grade" Width="50" Binding="{Binding score, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Credit" Width="50" Binding="{Binding credit, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn  Header="SubjectType" Width="50" Binding="{Binding subjectType, UpdateSourceTrigger=PropertyChanged}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="discription" HorizontalAlignment="Left" Height="229" Margin="375,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" BorderBrush="Black">
+            <TextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </TextBox.Background>
+        </TextBox>
+        <TextBlock HorizontalAlignment="Left" Margin="375,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Height="80"><Run Language="zh-cn" Text="If you have any questions about your grade ,you can write the problems on the follwing textbox and press the button &quot;CreateReport&quot; to make a document(.doc).Then send it by email.(The email adress is 1078018710@qq.com)"/></TextBlock>
+        <Button Content="CreateReport" HorizontalAlignment="Left" Margin="600,340,0,0" VerticalAlignment="Top" Width="85" Click="Button_Click_2">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+            </Button.Background>
+        </Button>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="235,46,0,0" VerticalAlignment="Top" Width="85" Click="Button_Click_1" Height="24">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="InputStudentID" HorizontalAlignment="Left" Height="23" Margin="60,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155">
+            <TextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label x:Name="ad" Content="" HorizontalAlignment="Left" Margin="305,390,0,0" VerticalAlignment="Top" Width="65"/>
+
+    </Grid>
+</Window>

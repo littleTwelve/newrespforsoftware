@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StudentGradeMSStoreContainer" CdmEntityContainer="StudentGradeMSContainer">
+    <EntitySetMapping Name="Grade集">
+      <EntityTypeMapping TypeName="IsTypeOf(StudentGradeMS.Grade)">
+        <MappingFragment StoreEntitySet="Grade集">
+          <ScalarProperty Name="score" ColumnName="score" />
+          <ScalarProperty Name="Student_studentID" ColumnName="Student_studentID" />
+          <ScalarProperty Name="Subject_subjectID" ColumnName="Subject_subjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student集">
+      <EntityTypeMapping TypeName="IsTypeOf(StudentGradeMS.Student)">
+        <MappingFragment StoreEntitySet="Student集">
+          <ScalarProperty Name="studentID" ColumnName="studentID" />
+          <ScalarProperty Name="studentName" ColumnName="studentName" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subject集">
+      <EntityTypeMapping TypeName="IsTypeOf(StudentGradeMS.Subject)">
+        <MappingFragment StoreEntitySet="Subject集">
+          <ScalarProperty Name="subjectID" ColumnName="subjectID" />
+          <ScalarProperty Name="subjectName" ColumnName="subjectName" />
+          <ScalarProperty Name="subjectType" ColumnName="subjectType" />
+          <ScalarProperty Name="credit" ColumnName="credit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,33 @@
+﻿<Window x:Class="StudentGradeManagementSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="512" Width="804">
+    <Grid>
+
+        <Image Source="1-121230094953.jpg" Stretch="Fill"/>
+
+        <Image Source="1-121230094953.jpg" Stretch="Fill"/>
+        <TextBox x:Name="textbox" HorizontalAlignment="Left" Height="23" Margin="320,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" RenderTransformOrigin="0.81,0.391" TextChanged="TextBox_TextChanged_2" Text="Please input your user ID" BorderBrush="Black">
+            <TextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </TextBox.Background>
+        </TextBox>
+        <RadioButton  x:Name="teacherRadioButton" Content="teacher" HorizontalAlignment="Left" Margin="320,255,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked_1"/>
+        <RadioButton  x:Name="studentRadioButton" Content="student" HorizontalAlignment="Left" Margin="435,255,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked_2"/>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="375,296,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.187,0.474" Click="Button_Click_1">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+            </Button.Background>
+        </Button>
+        <Image Margin="250,186,493,256" Source="unlock17.png" Stretch="Fill" RenderTransformOrigin="1,0.696"/>
+        <Image Margin="240,110,481,300" Source="user71.png" Stretch="Fill"/>
+        <GroupBox Header="GroupBox" HorizontalAlignment="Left" Height="40" Margin="303,245,0,0" VerticalAlignment="Top" Width="0"/>
+        <PasswordBox x:Name="passwordbox" HorizontalAlignment="Left" Margin="320,200,0,0" VerticalAlignment="Top" Width="190" Height="22" Password="password">
+            <PasswordBox.Background>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </PasswordBox.Background>
+        </PasswordBox>
+        <TextBlock x:Name="display" HorizontalAlignment="Left" Margin="340,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Height="20"/>
+
+    </Grid>
+</Window>

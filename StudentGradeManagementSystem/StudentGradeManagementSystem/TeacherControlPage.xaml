@@ -1,0 +1,157 @@
+﻿<Window x:Class="StudentGradeManagementSystem.TeacherControlPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TeacherControlPage" Height="512" Width="804">
+        <!--xmlns:assembly="clr-namespace:System;assembly=mscorlib"   
+        xmlns:local="clr-namespace:StudentGradeManagementSystem"-->   
+       
+    <!--<Window.Resources>
+        <ObjectDataProvider x:Key="keySubjectType" MethodName="GetValues" ObjectType="{x:Type assembly:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type Type="local:SubjectType"></x:Type>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>-->
+    <Grid Margin="0,0,2,4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="55*"/>
+            <ColumnDefinition Width="741*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="1-121230094953.jpg" Stretch="Fill" Grid.ColumnSpan="2" Margin="0,0,0,-4" Height="481" VerticalAlignment="Top" Opacity="0.9"/>
+        <Button Content="Display" HorizontalAlignment="Left" Margin="0,168,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" Grid.Column="1" Foreground="Black">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="Black"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+            </Button.Background>
+        </Button>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="0,221,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3" Grid.Column="1">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+            </Button.Background>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF707070"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="0,281,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4" RenderTransformOrigin="0.467,0.421" Grid.Column="1">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+            </Button.Background>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF707070"/>
+            </Button.BorderBrush>
+        </Button>
+
+        <DataGrid Name="dataGrid1"  AutoGenerateColumns="False" CanUserAddRows="False" Margin="115,115,76,121" RenderTransformOrigin="0.5,1.122" Grid.Column="1" IsReadOnly="True">
+            <DataGrid.Background>
+                <SolidColorBrush Color="#FFF0F0F0" Opacity="0.3"/>
+            </DataGrid.Background>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="操作" Width="40">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox Click="CheckBox_Click" Tag="{Binding studentID}" ></CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="StudentID" Width="70" Binding="{Binding studentID,  UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="StudentName" Width="90" Binding="{Binding studentName, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="SubjectID" Width="70" Binding="{Binding subjectID,  UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="SubjectName" Width="90" Binding="{Binding subjectName,  UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Grade" Width="50" Binding="{Binding score,  UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Credit" Width="50" Binding="{Binding credit,  UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="SubjectType" Width="90" Binding="{Binding subjectType,  UpdateSourceTrigger=PropertyChanged}"/>
+         
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" Margin="260,373,76,67" Grid.Column="1" RenderTransformOrigin="0.608,0.531">
+            <TextBlock Text="" Margin="5"/>
+            <Button Content="GO"   Click="Button_Click_5" Margin="0,231"/>
+            <TextBox x:Name="tbxPageNum" Text="" Width="39" Margin="0,0,0,10" Height="16" VerticalAlignment="Bottom" BorderBrush="Black" >
+                <TextBox.Background>
+                    <SolidColorBrush Color="White" Opacity="0"/>
+                </TextBox.Background>
+            </TextBox>
+            <TextBlock Text="Page" Width="31" Margin="0,0,0,10" Height="17" VerticalAlignment="Bottom" />
+            <Button Content="GO" HorizontalAlignment="Left" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.5,-0.053" Height="22" Click="Button_Click_8" Margin="0,5,0,0">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF707070"/>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnUp" Content="Pre"  VerticalAlignment="Center" Click="Button_Click_6" Margin="0,5,0,9" Width="29" Height="23">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF707070"/>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnNext" Content="Next"  VerticalAlignment="Center" Click="Button_Click_7" Height="23" Margin="0,5,0,9">
+                <Button.Background>
+                    <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                </Button.Background>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF707070"/>
+                </Button.BorderBrush>
+            </Button>
+            <TextBlock Margin="0,8,0,0" Width="197" RenderTransformOrigin="0.695,0.55"><InlineUIContainer>  
+            		<TextBlock Text="【All" />  
+            	</InlineUIContainer><Run Text=" "/><InlineUIContainer>  
+            		<TextBlock x:Name="tbkTotal" Foreground="Red" />  
+            	</InlineUIContainer><Run Text=" "/><InlineUIContainer>  
+            		<TextBlock Text="  Page】" />  
+            	</InlineUIContainer><Run Text=" "/><InlineUIContainer>  
+            		<TextBlock Text="【Current" />  
+            	</InlineUIContainer><Run Text=" "/><InlineUIContainer>  
+            		<TextBlock x:Name="tbkCurrentsize" Foreground="Red" />  
+            	</InlineUIContainer><Run Text=" "/><InlineUIContainer>  
+            		<TextBlock Text="  Page】" Width="52" />  
+            	</InlineUIContainer></TextBlock>
+        </StackPanel>
+        <TextBox Name="StudentID" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="160,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" BorderBrush="Black">
+            <TextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox Name="StudentName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="230,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80">
+            <TextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </TextBox.Background>
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="Black"/>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBox Name="SubjectID" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="315,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" BorderBrush="Black">
+            <TextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox Name="Credit" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="530,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.556,0.435" BorderBrush="Black">
+            <TextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox Name="Grade" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="470,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.455,0.565" BorderBrush="Black">
+            <TextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox Name="SubjectType" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="590,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62" BorderBrush="Black">
+            <TextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox Name="SubjectName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="390,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" BorderBrush="Black">
+            <TextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </TextBox.Background>
+        </TextBox>
+
+
+    </Grid>
+</Window>

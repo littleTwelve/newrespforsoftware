@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StudentGradeMS.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="StudentGradeMSStoreContainer">
+    <EntitySet Name="Grade集" EntityType="StudentGradeMS.Store.Grade集" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Student集" EntityType="StudentGradeMS.Store.Student集" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Subject集" EntityType="StudentGradeMS.Store.Subject集" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="GradeStudent" Association="StudentGradeMS.Store.GradeStudent">
+      <End Role="Grade" EntitySet="Grade集" />
+      <End Role="Student" EntitySet="Student集" />
+    </AssociationSet>
+    <AssociationSet Name="GradeSubject" Association="StudentGradeMS.Store.GradeSubject">
+      <End Role="Grade" EntitySet="Grade集" />
+      <End Role="Subject" EntitySet="Subject集" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Grade集">
+    <Key>
+      <PropertyRef Name="score" />
+    </Key>
+    <Property Name="score" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Student_studentID" Type="int" Nullable="false" />
+    <Property Name="Subject_subjectID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Student集">
+    <Key>
+      <PropertyRef Name="studentID" />
+    </Key>
+    <Property Name="studentID" Type="int" Nullable="false" />
+    <Property Name="studentName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subject集">
+    <Key>
+      <PropertyRef Name="subjectID" />
+    </Key>
+    <Property Name="subjectID" Type="int" Nullable="false" />
+    <Property Name="subjectName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="subjectType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="credit" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="GradeStudent">
+    <End Role="Grade" Type="StudentGradeMS.Store.Grade集" Multiplicity="*" />
+    <End Role="Student" Type="StudentGradeMS.Store.Student集" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="studentID" />
+      </Principal>
+      <Dependent Role="Grade">
+        <PropertyRef Name="Student_studentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GradeSubject">
+    <End Role="Grade" Type="StudentGradeMS.Store.Grade集" Multiplicity="*" />
+    <End Role="Subject" Type="StudentGradeMS.Store.Subject集" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="subjectID" />
+      </Principal>
+      <Dependent Role="Grade">
+        <PropertyRef Name="Subject_subjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

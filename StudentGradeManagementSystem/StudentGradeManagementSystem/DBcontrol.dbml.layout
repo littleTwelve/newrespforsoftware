@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DBcontrol">
+  <DataContextMoniker Name="/DBcontrolDataContext" />
+  <nestedChildShapes>
+    <classShape Id="cf7d2694-4420-408d-8022-8d5727bb76e4" absoluteBounds="5.25, 1, 2, 1.3525109863281251">
+      <DataClassMoniker Name="/DBcontrolDataContext/Grade集" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bbb65571-8517-4f6f-9440-903e5d26adf0" absoluteBounds="5.265, 1.46, 1.9700000000000002, 0.792510986328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="509efd55-2cd1-45d6-b5ee-81e0d9a516e7" absoluteBounds="2, 2.625, 2, 1.3525109863281251">
+      <DataClassMoniker Name="/DBcontrolDataContext/Student集" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b3535fcb-f3af-46c8-979e-746b08cf80da" absoluteBounds="2.015, 3.085, 1.9700000000000002, 0.792510986328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4 : 3.30125549316406); (6.25 : 3.30125549316406); (6.25 : 2.35251098632813)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBcontrolDataContext/Student集/Student集_Grade集" />
+      <nodes>
+        <classShapeMoniker Id="509efd55-2cd1-45d6-b5ee-81e0d9a516e7" />
+        <classShapeMoniker Id="cf7d2694-4420-408d-8022-8d5727bb76e4" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2755001b-0681-4ba4-b699-66169c482c2a" absoluteBounds="0.875, 0.625, 2, 1.5373050944010416">
+      <DataClassMoniker Name="/DBcontrolDataContext/Subject集" />
+      <nestedChildShapes>
+        <elementListCompartment Id="62c12ba5-2e5b-44d0-b421-877a6fdcbfac" absoluteBounds="0.89000000000000012, 1.085, 1.9700000000000002, 0.97730509440104174" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.875 : 1.58115254720052); (5.25 : 1.58115254720052)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBcontrolDataContext/Subject集/Subject集_Grade集" />
+      <nodes>
+        <classShapeMoniker Id="2755001b-0681-4ba4-b699-66169c482c2a" />
+        <classShapeMoniker Id="cf7d2694-4420-408d-8022-8d5727bb76e4" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

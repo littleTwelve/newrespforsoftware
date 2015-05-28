@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="StudentGradeMS.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="StudentGradeMSStoreContainer">
+    <EntitySet Name="Grade集" EntityType="StudentGradeMS.Store.Grade集" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Student集" EntityType="StudentGradeMS.Store.Student集" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Subject集" EntityType="StudentGradeMS.Store.Subject集" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="GradeStudent" Association="StudentGradeMS.Store.GradeStudent">
+      <End Role="Grade" EntitySet="Grade集" />
+      <End Role="Student" EntitySet="Student集" />
+    </AssociationSet>
+    <AssociationSet Name="GradeSubject" Association="StudentGradeMS.Store.GradeSubject">
+      <End Role="Grade" EntitySet="Grade集" />
+      <End Role="Subject" EntitySet="Subject集" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Grade集">
+    <Key>
+      <PropertyRef Name="score" />
+    </Key>
+    <Property Name="score" Type="int" StoreGeneratedPattern="None" Nullable="false" />
+    <Property Name="Student_studentID" Type="int" Nullable="false" />
+    <Property Name="Subject_subjectID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Student集">
+    <Key>
+      <PropertyRef Name="studentID" />
+    </Key>
+    <Property Name="studentID" Type="int" Nullable="false" />
+    <Property Name="studentName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subject集">
+    <Key>
+      <PropertyRef Name="subjectID" />
+    </Key>
+    <Property Name="subjectID" Type="int" Nullable="false" />
+    <Property Name="subjectName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="subjectType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="credit" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="GradeStudent">
+    <End Role="Grade" Type="StudentGradeMS.Store.Grade集" Multiplicity="*" />
+    <End Role="Student" Type="StudentGradeMS.Store.Student集" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="studentID" />
+      </Principal>
+      <Dependent Role="Grade">
+        <PropertyRef Name="Student_studentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GradeSubject">
+    <End Role="Grade" Type="StudentGradeMS.Store.Grade集" Multiplicity="*" />
+    <End Role="Subject" Type="StudentGradeMS.Store.Subject集" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="subjectID" />
+      </Principal>
+      <Dependent Role="Grade">
+        <PropertyRef Name="Subject_subjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="StudentGradeMS" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="StudentGradeMSContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Grade集" EntityType="StudentGradeMS.Grade" />
+          <EntitySet Name="Student集" EntityType="StudentGradeMS.Student" />
+          <EntitySet Name="Subject集" EntityType="StudentGradeMS.Subject" />
+          <AssociationSet Name="GradeStudent" Association="StudentGradeMS.GradeStudent">
+            <End Role="Grade" EntitySet="Grade集" />
+            <End Role="Student" EntitySet="Student集" />
+          </AssociationSet>
+          <AssociationSet Name="GradeSubject" Association="StudentGradeMS.GradeSubject">
+            <End Role="Grade" EntitySet="Grade集" />
+            <End Role="Subject" EntitySet="Subject集" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Grade">
+          <Key>
+            <PropertyRef Name="score" />
+          </Key>
+          <Property Type="Int32" Name="score" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <NavigationProperty Name="Student" Relationship="StudentGradeMS.GradeStudent" FromRole="Grade" ToRole="Student" />
+          <Property Type="Int32" Name="Student_studentID" Nullable="false" />
+          <NavigationProperty Name="Subject" Relationship="StudentGradeMS.GradeSubject" FromRole="Grade" ToRole="Subject" />
+          <Property Type="Int32" Name="Subject_subjectID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="studentID" />
+          </Key>
+          <Property Type="Int32" Name="studentID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Type="String" Name="studentName" Nullable="false" />
+          <Property Type="String" Name="password" Nullable="false" />
+          <NavigationProperty Name="Grade" Relationship="StudentGradeMS.GradeStudent" FromRole="Student" ToRole="Grade" />
+        </EntityType>
+        <EntityType Name="Subject">
+          <Key>
+            <PropertyRef Name="subjectID" />
+          </Key>
+          <Property Type="Int32" Name="subjectID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Type="String" Name="subjectName" Nullable="false" />
+          <Property Type="String" Name="subjectType" Nullable="false" />
+          <Property Type="Int32" Name="credit" Nullable="false" />
+          <NavigationProperty Name="Grade" Relationship="StudentGradeMS.GradeSubject" FromRole="Subject" ToRole="Grade" />
+        </EntityType>
+        <Association Name="GradeStudent">
+          <End Type="StudentGradeMS.Grade" Role="Grade" Multiplicity="*" />
+          <End Type="StudentGradeMS.Student" Role="Student" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+            </Principal>
+            <Dependent Role="Grade">
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GradeSubject">
+          <End Type="StudentGradeMS.Grade" Role="Grade" Multiplicity="*" />
+          <End Type="StudentGradeMS.Subject" Role="Subject" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Subject">
+              <PropertyRef Name="subjectID" />
+            </Principal>
+            <Dependent Role="Grade">
+              <PropertyRef Name="Subject_subjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StudentGradeMSStoreContainer" CdmEntityContainer="StudentGradeMSContainer">
+    <EntitySetMapping Name="Grade集">
+      <EntityTypeMapping TypeName="IsTypeOf(StudentGradeMS.Grade)">
+        <MappingFragment StoreEntitySet="Grade集">
+          <ScalarProperty Name="score" ColumnName="score" />
+          <ScalarProperty Name="Student_studentID" ColumnName="Student_studentID" />
+          <ScalarProperty Name="Subject_subjectID" ColumnName="Subject_subjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student集">
+      <EntityTypeMapping TypeName="IsTypeOf(StudentGradeMS.Student)">
+        <MappingFragment StoreEntitySet="Student集">
+          <ScalarProperty Name="studentID" ColumnName="studentID" />
+          <ScalarProperty Name="studentName" ColumnName="studentName" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subject集">
+      <EntityTypeMapping TypeName="IsTypeOf(StudentGradeMS.Subject)">
+        <MappingFragment StoreEntitySet="Subject集">
+          <ScalarProperty Name="subjectID" ColumnName="subjectID" />
+          <ScalarProperty Name="subjectName" ColumnName="subjectName" />
+          <ScalarProperty Name="subjectType" ColumnName="subjectType" />
+          <ScalarProperty Name="credit" ColumnName="credit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
